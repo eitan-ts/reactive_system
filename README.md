@@ -13,13 +13,13 @@ Including support for:
 
 Effects has the ability to "see through" other functions signals, for example:
 
-const [count, setCount] = createSignal(0);
+`const [count, setCount] = createSignal(0);
 
 const getDoubleCount = () => count() * 2;
 
 createEffect(() => {
-console.log('[Effect] Double count is', getDoubleCount())
-});
+  console.log('[Effect] Double count is', getDoubleCount())
+});`
 
 In this example, even-tho the Effect isn't calling directly to count signal, it still tracks it as it's being used within the getDoubleCount method.
 
